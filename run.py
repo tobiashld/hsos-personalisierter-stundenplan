@@ -49,7 +49,6 @@ def doYourThing():
         if str(event.name.split("'")[0]) in gewaehlteModule:
             cleanCalendar.events.add(event)
         
-    print(cleanCalendar)
 
     with open('my.ics', 'w') as f:
         f.writelines(cleanCalendar.serialize_iter())
