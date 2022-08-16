@@ -8,15 +8,9 @@ import requests
 ##########################################################################################################################################################
 
 # ohne die letzte Zahl, falls vorhanden. 20DWF2 wird zu 20DWF
-studiengruppe = '20DWF'
-semester = '5'
+jahrgang = '20'
 
-# EBU = E-Business
-# IMA = Informationsmanagement
-# IBM = IT-Beratung und Marketing
-# ITI = IT-Infrastrukturmanagement
-# PDI = Produktionsinformatik
-schwerpunkt = 'IMA'
+
 
 # Veranstaltungsname im Stundenplan
 gewaehlteModule = [
@@ -34,7 +28,7 @@ gewaehlteModule = [
 
 
 
-url = 'https://sked.lin.hs-osnabrueck.de/sked/grp/'+studiengruppe+'-'+schwerpunkt+'-'+semester+'.ics'
+url = 'https://sked.lin.hs-osnabrueck.de/sked/grp/'+jahrgang+'SPS.ics'
 dirtyCalendar = Calendar()
 cleanCalendar = Calendar()
 
