@@ -28,7 +28,7 @@ gewaehlteModule = [
 
 
 
-url = 'https://sked.lin.hs-osnabrueck.de/sked/grp/'+jahrgang+'SPS.ics'
+url = 'https://sked.lin.hs-osnabrueck.de/sked/jg/'+jahrgang+'SPS.ics'
 dirtyCalendar = Calendar()
 cleanCalendar = Calendar()
 
