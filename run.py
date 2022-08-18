@@ -29,25 +29,31 @@ gewaehlteModule = [
 
 
 url = 'https://sked.lin.hs-osnabrueck.de/sked/jg/'+jahrgang+'SPS.ics'
-dirtyCalendar = Calendar()
-cleanCalendar = Calendar()
 
 
 def doYourThing():
+    grabHSCalender()
+    filterHSCalender()
+    exportCleanCalender()
+
+    
+    
+def grabHSCalender():
     req = requests.get(url)
+    global dirtyCalendar
     dirtyCalendar = Calendar(req.text)
+    global cleanCalendar
     cleanCalendar = dirtyCalendar.clone()
     cleanCalendar.events.clear()
 
+def filterHSCalender():
     for event in dirtyCalendar.events:
-        if str(event.name.split("'")[0]) in gewaehlteModule:
+        if str(event.name) in gewaehlteModule:
             cleanCalendar.events.add(event)
-        
 
+def exportCleanCalender():
     with open('my.ics', 'w') as f:
         f.writelines(cleanCalendar.serialize_iter())
-    
-
     
 
 
